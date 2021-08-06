@@ -67,9 +67,7 @@ func HasAnySellersFromCity(sellers []Seller, city string) {
 		fmt.Println("allSellers is empty")
 	}
 
-	for i, x := range sellers {
-		allSellers[i] = x
-	}
+	copy(allSellers, sellers)
 
 	combinedSellers := []Seller{}
 
