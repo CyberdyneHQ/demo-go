@@ -1,26 +1,20 @@
 version = 1
 
 [[analyzers]]
-name = "go"
-enabled = true
-
-  [analyzers.meta]
-  import_paths = ["github.com/deepsourcelabs/demo-go"]
-
-[[analyzers]]
-name = "docker"
-enabled = true
-
-  [analyzers.meta]
-  dockerfile_paths = [
-    "./env/Dockerfile_dev",
-    "./env/Dockerfile_prod"
-  ]
-
-[[transformers]]
-name = "gofmt"
+name = "shell"
 enabled = true
 
 [[analyzers]]
 name = "secrets"
+enabled = true
+
+[[analyzers]]
+name = "go"
+enabled = true
+
+  [analyzers.meta]
+  import_root = "github.com/CyberdyneHQ/demo-go"
+
+[[transformers]]
+name = "gofmt"
 enabled = true
