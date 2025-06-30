@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"context"	
+	"net/http"
+)
 
 func exposeHeader(url string) error {
 	req, err := http.NewRequest(http.MethodGet, url, nil)
