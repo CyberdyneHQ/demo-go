@@ -16,3 +16,10 @@ func exposeHeader(url string) error {
 
 	return nil
 }
+
+// GetSomethingWithContext is a dummy function to illustrate the anti-pattern.
+func GetSomethingWithContext(name string, ctx context.Context) string {
+	// do something with context
+	log.Printf("Context value for key 'somekey': %v", ctx.Value("somekey"))
+	return "something for " + name
+}
