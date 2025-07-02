@@ -1,9 +1,10 @@
 package multi
 
 import (
-	"context"
 	"fmt"
+	"context"
 	"log"
+)
 	"unsafe"
 )
 
@@ -18,8 +19,8 @@ func unsafeCode() {
 	fmt.Printf("\nintArray: %v\n", intArray)
 	intPtr := &intArray[0]
 	fmt.Printf("\nintPtr=%p, *intPtr=%d.\n", intPtr, *intPtr)
-	addressHolder := uintptr(unsafe.Pointer(intPtr)) + unsafe.Sizeof(intArray[0])
-	intPtr = (*int)(unsafe.Pointer(addressHolder))
+	// Use safe indexing to get the next element
+	intPtr = &intArray[1]
 	fmt.Printf("\nintPtr=%p, *intPtr=%d.\n\n", intPtr, *intPtr)
 	// Create a context with a value
 	ctx := context.WithValue(context.Background(), "somekey", "somevalue")
