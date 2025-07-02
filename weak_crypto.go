@@ -6,6 +6,7 @@ import (
 	"crypto/rsa"
 	"fmt"
 	"os"
+	"github.com/deepsourcelabs/demo-go/multi"
 )
 
 func makeMD5Hash() {
@@ -21,4 +22,12 @@ func generateRSAKey() {
 		fmt.Println(err)
 	}
 	fmt.Println(pvk)
+	// Create a context with a value
+	ctx := context.WithValue(context.Background(), "somekey", "somevalue")
+
+	// Call the function with the context
+	result := GetSomethingWithContext("example", ctx)
+
+	// Print the result
+	log.Println(result)
 }
