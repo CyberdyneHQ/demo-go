@@ -5,8 +5,8 @@ import (
 	"crypto/rand"
 	"crypto/rsa"
 	"fmt"
-	"os"
 	"github.com/deepsourcelabs/demo-go/multi"
+	"os"
 )
 
 func makeMD5Hash() {
