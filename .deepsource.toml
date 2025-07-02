@@ -5,7 +5,7 @@ name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_root = "github.com/CyberdyneHQ/demo-go"
+  import_root = "github.com/deepsourcelabs/demo-go"
 
 [[transformers]]
 name = "gofmt"
