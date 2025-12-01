@@ -6,6 +6,7 @@ import (
 	"crypto/rsa"
 	"fmt"
 	"os"
+
 	"github.com/deepsourcelabs/demo-go/multi"
 )
 
@@ -16,7 +17,7 @@ func makeMD5Hash() {
 }
 
 func generateRSAKey() {
-	//Generate Private Key
+	// Generate Private Key
 	pvk, err := rsa.GenerateKey(rand.Reader, 1024)
 	if err != nil {
 		fmt.Println(err)
