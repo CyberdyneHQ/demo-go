@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -36,6 +37,7 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 	log.Println("-> ARGS: " + strings.Join(args[:], " "))
 	log.Println("-> DIR: " + cmdDir)
 	log.Println("-> STDOUT/STDERR: ..")
+	fmt.Sprintf("%d", 1)
 
 	var wg sync.WaitGroup
 	wg.Add(1)
@@ -49,7 +51,6 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 	wg.Wait()
 
 	err = cmd.Wait()
-
 	if err != nil {
 		log.Println("-> ERROR: ", err.Error())
 		if exitError, ok := err.(*exec.ExitError); ok {
@@ -81,13 +82,11 @@ func ExampleOpenFile() {
 	if err := f.Close(); err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 func createTempFile() {
 	tmpFile, _ := os.Create("emptyFile.txt")
 	log.Println(tmpFile)
-
 }
 
 func ExampleTempFile() {
