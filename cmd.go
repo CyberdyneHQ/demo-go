@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"fmt"
 	"os/exec"
 	"strings"
 	"sync"
@@ -36,7 +37,7 @@ func runCmd(command string, args []string, env []string, cmdDir string) (string,
 	log.Println("-> ARGS: " + strings.Join(args[:], " "))
 	log.Println("-> DIR: " + cmdDir)
 	log.Println("-> STDOUT/STDERR: ..")
-	log.Printf("%s")
+	fmt.Sprintf("%d", 1)
 
 	var wg sync.WaitGroup
 	wg.Add(1)
