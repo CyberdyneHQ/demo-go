@@ -2,11 +2,11 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
 	"os"
-	"fmt"
 	"os/exec"
 	"strings"
 	"sync"
