@@ -11,6 +11,10 @@ type Fake struct{}
 
 func (Fake) Good() {}
 
+type contextKey struct{}
+
+var MyContextKey = contextKey{}
+
 func unsafeCode() {
 	unsafeM := Fake{}
 	unsafeM.Good()
@@ -22,7 +26,7 @@ func unsafeCode() {
 	intPtr = (*int)(unsafe.Pointer(addressHolder))
 	fmt.Printf("\nintPtr=%p, *intPtr=%d.\n\n", intPtr, *intPtr)
 	// Create a context with a value
-	ctx := context.WithValue(context.Background(), "somekey", "somevalue")
+	ctx := context.WithValue(context.Background(), MyContextKey, "somevalue")
 
 	// Call the function with the context
 	result := GetSomethingWithContext("example", ctx)
